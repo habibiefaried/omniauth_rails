@@ -32,11 +32,11 @@ class User < ActiveRecord::Base
         return registered_user
       else
 
-        user = User.create(name:auth.extra.raw_info.name,
-                            provider:auth.provider,
-                            uid:auth.uid,
-                            email:auth.uid+"@twitter.com",
-                            password:Devise.friendly_token[0,20],
+        user = User.create(name: auth.extra.raw_info.name,
+                            provider: auth.provider,
+                            uid: auth.uid,
+                            email: auth.uid+"@twitter.com",
+                            password: Devise.friendly_token[0,20],
                           )
       end
 
